@@ -1,0 +1,10 @@
+%%%sending data from controller to view::%%%
+** using Model >> setAttribute();
+**  using modelandview
+
+%%%sending data from view to controller ::%%%
+
+@RequestParam::
+@ModelAtribute:: easy mapping with the form data
+                :: use of common Model.addAtribute ... in one method
+
