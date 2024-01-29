@@ -1,6 +1,6 @@
 package springmvc.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import springmvc.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class NoteController {
     @Autowired
     private NoteService noteService;
 
-    @RequestMapping(path = "/savenoteoldway" , method = RequestMethod.POST)
+    @RequestMapping(path = "/savenoteolderway" , method = RequestMethod.POST)
     public  ModelAndView saveNoteOldWay(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView();
 
@@ -32,7 +32,7 @@ public class NoteController {
     }
 
 
-    @RequestMapping(path = "/savenoteold" , method = RequestMethod.POST)
+    @RequestMapping(path = "/savenoteoldway" , method = RequestMethod.POST)
     public  ModelAndView saveNoteOld(@RequestParam("tittle") String tittle,@RequestParam("content") String content ){
         ModelAndView modelAndView = new ModelAndView();
 
@@ -47,7 +47,11 @@ public class NoteController {
 
     @RequestMapping(path = "/savenote" , method = RequestMethod.POST)
     public  String saveNoteNewWay(@ModelAttribute Note note, Model model){
-
+        // field name of the ModelAttribute and  
         return "success";
+    }
+
+    public void setNoteService(NoteService noteService) {
+        this.noteService = noteService;
     }
 }

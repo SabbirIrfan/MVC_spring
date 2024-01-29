@@ -2,7 +2,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -10,8 +9,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd
-       http://www.springframework.org/schema/p
-       http://www.springframework.org/schema/tx/spring-p.xsd
+
         ">
 
 <!--    ///         -->
@@ -26,23 +24,21 @@
 
 
     <!--    data sources-->
-    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://Localhost:3306/regiForm"/>
+    <bean name="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/regiForm" />
         <property name="username" value="root"/>
         <property name="password" value="" />
     </bean>
 
     <!--    hibernate properties-->
     <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" name="factory" >
-        <property name="dataSource" ref="dataSource" />
+        <property name="dataSource" ref="ds" />
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect"> org.hibernate.dialect.MySQLDialect </prop>
+                <prop key="hibernate.dialect"> org.hibernate.dialect.MySQL8Dialect </prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
-
-
             </props>
         </property>
 
@@ -58,9 +54,14 @@
 
     <!--    local session factory beans-->
     <bean class="org.springframework.orm.hibernate5.HibernateTemplate" name="hibernateTemplate" >
-        <constructor-arg name="sessionFactory" ref="factory" />
-<!--        <property name="sessionFactory" ref="factory" />-->
-    </bean>p
+<!--        <constructor-arg name="sessionFactory" ref="factory" />-->
+        <property name="sessionFactory" ref="factory" />
+    </bean>
+
+    <bean class="springmvc.Dao.NoteDao" name="noteDao">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
 <!--    To open the transection mode from read only to write-->
     <bean name="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="factory" />

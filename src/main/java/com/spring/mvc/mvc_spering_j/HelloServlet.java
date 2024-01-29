@@ -2,8 +2,10 @@ package com.spring.mvc.mvc_spering_j;
 
 import java.io.*;
 
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+
+import javax.servlet.http.HttpServlet;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {

@@ -7,8 +7,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NoteService {
-    @Autowired
     private NoteDao noteDao;
+
+    public NoteDao getNoteDao() {
+        return noteDao;
+    }
+    @Autowired
+
+    public void setNoteDao(NoteDao noteDao) {
+        this.noteDao = noteDao;
+    }
 
     public int createNote(Note note){
         return this.noteDao.saveNote(note);
