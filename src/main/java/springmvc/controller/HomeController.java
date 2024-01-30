@@ -13,19 +13,18 @@ import java.util.List;
 @Controller
 public class HomeController {
     int count = 0 ;
-    @RequestMapping("/springmvc")
+    @RequestMapping("/")
     public String home(Model model){
-        String name = "sabbir irfan chowdhury";
+        String name = "spring mvc configuration!! ";
         model.addAttribute("name", name);
 
         System.out.println("this is home and the time is "+ LocalDateTime.now());
-
         System.out.println(count);
-        count = count+1;
-        model.addAttribute("count", count);
+
+        model.addAttribute("count", count++);
         return "index";
     }
-    @RequestMapping("form")
+    @RequestMapping("/form")
     public ModelAndView modelAndView(){
         System.out.println("from model view");
 

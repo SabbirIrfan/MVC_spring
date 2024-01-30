@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
 <html>
 <head>
@@ -16,10 +15,10 @@
 <body>
 
     <h1>
-        ${note.getContent()}
+<%--        ${note.getContent()}--%>
         <%
             Note note =(Note) request.getAttribute("note");
-            System.out.println(note.getContent());
+//            System.out.println(note.getContent());
         %>
     </h1>
 </body>

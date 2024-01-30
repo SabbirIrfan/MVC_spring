@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @WebServlet(
         name = "servlet",
         description = "This is my counter demo `annotated` servlet",
-        urlPatterns = "/"
+        urlPatterns = "/countS"
 )
 public class CountServlet implements Servlet {
 

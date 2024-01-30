@@ -8,6 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Note {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
 
@@ -16,6 +17,11 @@ public class Note {
 
     public Note() {
         super();
+    }
+
+    public Note(String tittle, String content) {
+        this.tittle = tittle;
+        this.content = content;
     }
 
     public Note(int id, String tittle, String content) {

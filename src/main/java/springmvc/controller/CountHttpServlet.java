@@ -17,22 +17,23 @@ import java.time.LocalDateTime;
 public class CountHttpServlet extends HttpServlet {
 
     int count ;
+    static  int staticCount;
 
 
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
-        System.out.println(LocalDateTime.now() + "in init oh HTTPSERVLET");
+        System.out.println(LocalDateTime.now() + " time in init on HTTPSERVLET");
         count = 0;
+        staticCount = 0;
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/views/count.jsp");
-//        PrintWriter out = servletResponse.getWriter();
-        count = count+1;
-//        out.println(count);
-        req.setAttribute("count",this.count);
+        req.setAttribute("count",this.count++);
+        req.setAttribute("staticCount",staticCount++);
+
         System.out.println("here in do get");
         requestDispatcher.forward(req,resp);
     }
@@ -40,10 +41,9 @@ public class CountHttpServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/views/count.jsp");
-//        PrintWriter out = servletResponse.getWriter();
-        count = count+1;
-//        out.println(count);
-        req.setAttribute("count",this.count);
+        req.setAttribute("count",this.count++);
+        req.setAttribute("staticCount",staticCount++);
+
         System.out.println("here in do get");
         requestDispatcher.forward(req,resp);
     }

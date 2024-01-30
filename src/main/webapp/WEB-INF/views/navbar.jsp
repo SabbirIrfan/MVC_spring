@@ -1,12 +1,10 @@
 
-<nav class="navbar navbar-expand-lg navbar-light navbarBG container"  >
-    <a class="navbar-brand" href="index.jsp">Notes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar"  >
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+    <a class="navbar-brand navbar-name" href="form">Notes</a>
+
+    <div class="navbar-div" id="navbarSupportedContent">
+        <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="form">Home </a>
             </li>
@@ -15,12 +13,14 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="allNotes.jsp">Show Notes</a>
+                <a class="nav-link " href="allNotes">Show Notes</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0 ">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <div class="navbtn" >
+            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </div>
+
     </div>
+
 </nav>

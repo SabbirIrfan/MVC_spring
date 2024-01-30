@@ -1,14 +1,48 @@
 .body{
 
+
 }
-.navbarBG{
-    background: antiquewhite;
-    padding:0 ;
-    margin:0;
+.navbar{
+    display: flex;
+    background: bisque;
+    justify-content: left;
+}
+.navbar-div{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30%;
+
+
+}
+.counterForm{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding-top: 200px;
 
 
 }
+.counterHeading{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    justify-content: center;
+}
+.counterBox{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    display: flex;
+    justify-content: space-around;
+    background-color: cadetblue;
+}
+
+
 .container{
     justify-items: stretch;
     border-bottom-left-radius: 10px;

@@ -1,6 +1,8 @@
 package springmvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.http.MediaType;
 import springmvc.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,16 +41,23 @@ public class NoteController {
         modelAndView.addObject("tittle", tittle);
         modelAndView.addObject("content", content);
         modelAndView.setViewName("form");
-
+        Note note = new Note(tittle,content);
+        this.noteService.createNote(note);
         System.out.println(tittle+": its the tittle");
         return modelAndView;
 
     }
 
-    @RequestMapping(path = "/savenote" , method = RequestMethod.POST)
-    public  String saveNoteNewWay(@ModelAttribute Note note, Model model){
-        // field name of the ModelAttribute and  
-        return "success";
+    @RequestMapping(path = "/savenote" , method = RequestMethod.POST , consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    public  ModelAndView saveNoteNewWay(@ModelAttribute Note note, Model model){
+        // field name of the ModelAttribute and
+        System.out.println(" i am here with "+ note );
+        this.noteService.createNote(note);
+        System.out.println("note created?");
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("note",note);
+        modelAndView.setViewName("success");
+        return modelAndView;
     }
 
     public void setNoteService(NoteService noteService) {

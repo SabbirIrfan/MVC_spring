@@ -10,21 +10,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cebd7c34-173b-49f7-8852-86cb3b09b961" name="Changes" comment="ORM set up problem">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountHttpServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/count.jsp" afterDir="false" />
+    <list default="true" id="cebd7c34-173b-49f7-8852-86cb3b09b961" name="Changes" comment="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection.">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/mvc/mvc_spering_j/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/mvc/mvc_spering_j/HelloServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/Dao/NoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/Dao/NoteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountHttpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountHttpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/NoteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/model/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/service/NoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/count.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/count.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +82,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.intentionPowerPack",
     "vue.rearranger.settings.migration": "true"
@@ -210,6 +208,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-11.0.22-corretto-11.0.22-3183f394aec4-a3cad8ed" />
+        <option value="jdk-17.0.9-corretto-17.0.9-3183f394aec4-86fc8109" />
         <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-920bfa72" />
       </set>
     </attachedChunks>
@@ -232,7 +231,7 @@
       <workItem from="1706441730775" duration="891000" />
       <workItem from="1706445383827" duration="15307000" />
       <workItem from="1706516188332" duration="2465000" />
-      <workItem from="1706522218951" duration="6802000" />
+      <workItem from="1706522218951" duration="18770000" />
     </task>
     <task id="LOCAL-00001" summary="MVC_with spring">
       <option name="closed" value="true" />
@@ -258,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706195649504</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection.">
+      <option name="closed" value="true" />
+      <created>1706531703060</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706531703060</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +275,8 @@
     <MESSAGE value="MVC_with spring" />
     <MESSAGE value="bug fix-- request mapping" />
     <MESSAGE value="ORM set up problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="ORM set up problem" />
+    <MESSAGE value="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection." />
+    <option name="LAST_COMMIT_MESSAGE" value="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

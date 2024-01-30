@@ -22,59 +22,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Hello, world!</title>
-    <style>
-        .counterDiv{
-            display: flex;
-            flex-direction: column;
 
-        }
-        .counterForm{
-            display: flex;
-            flex-wrap: wrap;
-
-            justify-content: center;
-            align-items: center;
-
-        }
-        .counterBox{
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-        }
-        .button{
-            display: flex;
-            justify-content: center;
-            background-color: cadetblue;
-        }
-        .counterHeading{
-            display: flex;
-            flex-basis: 100%;
-            justify-content: center;
-            padding-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
 
 <%!          DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");%>
+    <div class="counterForm">
+        <form action="countH" method="post">
 
-<form action="countH" class="counterForm">
-    <div class="counterHeading">
-        <h1>Count is now at </h1>
-    </div>
-    <div class="counterBox">
-<%--        <label for="LocalTime"></label>--%>
-        <!--        <input type="text" class="form-control" id="LocalTime" placeholder="LocalTime-Time" aria-describedby="java.time">-->
-        <h3> <%= LocalDate.now() +"  >>  " + LocalDateTime.now().format(formatter) %></h3>
-    </div>
-    <div class="counterBox">
-        <!--        <label for="DateTime">Email address</label>-->
-        <input type="text" class="form-control" id="DateTime" placeholder="Date-Time" aria-describedby="util.time">
-    </div>
+            <div class="counterHeading">
+                <h1>Count is now at <%= request.getAttribute("count")%> </h1> <br>
+                <h1>static Count is now at <%= request.getAttribute("staticSount")%></h1>
+            </div>
 
-    <button type="submit" class="button">Submit</button>
-</form>
+            <div class="counterBox">
+                <h3>Date :: <%=  LocalDate.now() +" Time ::"  %> > </h3>
+                <h3> <%=   LocalDateTime.now().format(formatter) %></h3>
+            </div>
 
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
