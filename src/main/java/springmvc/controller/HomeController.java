@@ -13,6 +13,7 @@ import java.util.List;
 @Controller
 public class HomeController {
     int count = 0 ;
+    static int countStatic = 0;
     @RequestMapping("/")
     public String home(Model model){
         String name = "spring mvc configuration!! ";
@@ -22,7 +23,9 @@ public class HomeController {
         System.out.println(count);
 
         model.addAttribute("count", count++);
-        return "index";
+        model.addAttribute("CountStatic",countStatic);
+
+        return "form";
     }
     @RequestMapping("/form")
     public ModelAndView modelAndView(){

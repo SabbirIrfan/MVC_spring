@@ -7,14 +7,15 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
-    <body>
-        <div class="container">
-            <%@include file="navbar.jsp"%>
+    <body >
+    <%@include file="navbar.jsp"%>
+        <div >
+
             <%
                 if(request.getAttribute("status") != null)
                     out.println(request.getAttribute("status"));
                 if(request.getAttribute("tittle") == null)
-                    request.setAttribute("tittle","Give a title to your note");
+                    request.setAttribute("tittle","Give a title to your product");
 
                 if(request.getAttribute("content") == null)
                     request.setAttribute("content", "what you wanna save for latter");
@@ -31,18 +32,25 @@
             <%--   ADD NOTES  --%>
             <form action="savenoteoldway" method="post">
 
-                <input type="hidden" name="id" id="id" value="<%=request.getAttribute("id")%>">
+                <label for="userId">User Id</label>
+                <input  name="id" id="userId" value="user ID">
 
-                <div class="form-group formPad">
-                    <label for="tittle">Note Tittle</label>
-                    <input type=text class="form-control" id="tittle" name="tittle" required aria-describedby="emailHelp" value="<% out.println(request.getAttribute("tittle"));%>">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your Notes with anyone else But why should you believe anything I promise</small>
+                <label for="userName">User name</label>
+                <input  name="name" id="userName" value="User name">
+
+                <div class="form-group">
+                    <label for="product">Example select</label>
+                    <select class="form-control" name="product" id="product">
+                        <option>PRODUCT 1</option>
+                        <option>PRODUCT 2</option>
+                        <option>PRODUCT 3</option>
+                        <option>PRODUCT 4</option>
+                        <option>PRODUCT 5</option>
+                    </select>
                 </div>
-
                 <div class="form-group formPad">
-                    <label for="content">Content</label>
-                    <textarea  class="form-control noteContainer" id="content" name="content" required>
-                        <% out.println(request.getAttribute("content"));%>
+                    <label for="productDetail">Product Detail</label>
+                    <textarea  class="form-control noteContainer" id="productDetail" name="detail" required>Write something about you about this product.
                     </textarea>
                 </div>
 
@@ -53,3 +61,12 @@
         </div>
     </body>
 </html>
+
+
+
+<%--<div class="form-group formPad">--%>
+<%--    <label for="tittle">Note Tittle</label>--%>
+<%--    <input type=text class="form-control" id="tittle" name="tittle" required aria-describedby="emailHelp" value="<% out.println(request.getAttribute("tittle"));%>">--%>
+<%--    <small id="emailHelp" class="form-text text-muted">We'll never share your Notes with anyone else But why should you believe anything I promise</small>--%>
+<%--</div>--%>
+

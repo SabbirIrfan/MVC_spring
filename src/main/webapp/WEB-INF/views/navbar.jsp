@@ -1,26 +1,33 @@
 
-<nav class="navbar"  >
+<nav class="navbar navbar-expand-lg navbar-light navbarBG container"  >
+    <a class="navbar-brand" href="form">Product</a>
 
-    <a class="navbar-brand navbar-name" href="form">Notes</a>
 
-    <div class="navbar-div" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+    <div style="display: flex; justify-content: space-between" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="form">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="form">Add Notes</a>
+                <a class="nav-link" href="form">someFeature</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="allNotes">Show Notes</a>
+                <a class="nav-link " href="allNotes">showAllSomething</a>
             </li>
         </ul>
-        <div class="navbtn" >
-            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </div>
+
+        <form class="my-2 my-lg-0 search">
+            <div style="display: flex; justify-content: space-between; ">
+                <div class="me-2">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <div>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </div>
+
+        </form>
 
     </div>
-
 </nav>

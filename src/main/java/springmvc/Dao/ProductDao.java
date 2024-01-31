@@ -2,17 +2,16 @@ package springmvc.Dao;
 
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.transaction.annotation.Transactional;
-import springmvc.model.Note;
-import org.springframework.beans.factory.annotation.Autowired;
+import springmvc.model.Product;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class NoteDao {
+public class ProductDao {
 
     private HibernateTemplate hibernateTemplate;
 
 
-    public NoteDao() {
+    public ProductDao() {
         super();
     }
 
@@ -22,13 +21,13 @@ public class NoteDao {
     }
 
 
-    public NoteDao(HibernateTemplate hibernateTemplate) {
+    public ProductDao(HibernateTemplate hibernateTemplate) {
         this.hibernateTemplate = hibernateTemplate;
     }
 
     @Transactional
-    public int saveNote(Note note){
-        return (int) (Integer) this.hibernateTemplate.save(note);
+    public void saveProduct(Product product){
+        this.hibernateTemplate.save(product);
 
     }
 

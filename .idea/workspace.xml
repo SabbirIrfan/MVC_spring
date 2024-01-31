@@ -10,20 +10,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cebd7c34-173b-49f7-8852-86cb3b09b961" name="Changes" comment="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cebd7c34-173b-49f7-8852-86cb3b09b961" name="Changes" comment="count">
+      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/Dao/NoteRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/Dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/service/NoteRepoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springmvc/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountHttpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountHttpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/CountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/Dao/NoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/Dao/ProductDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/model/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springmvc/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springmvc/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/count.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/count.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/navbar.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +40,7 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -71,7 +77,6 @@
     "Maven.MVC_SPERING_J [clean,install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 9.0.85.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -231,7 +236,7 @@
       <workItem from="1706441730775" duration="891000" />
       <workItem from="1706445383827" duration="15307000" />
       <workItem from="1706516188332" duration="2465000" />
-      <workItem from="1706522218951" duration="18770000" />
+      <workItem from="1706522218951" duration="45143000" />
     </task>
     <task id="LOCAL-00001" summary="MVC_with spring">
       <option name="closed" value="true" />
@@ -265,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706531703060</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="count">
+      <option name="closed" value="true" />
+      <created>1706602787808</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706602787808</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +289,8 @@
     <MESSAGE value="bug fix-- request mapping" />
     <MESSAGE value="ORM set up problem" />
     <MESSAGE value="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection." />
-    <option name="LAST_COMMIT_MESSAGE" value="hibernate configuration problem fixed&gt;&gt; java version down graded. some jdbc ddl problem fixed with appropriate mysql driver selection." />
+    <MESSAGE value="count" />
+    <option name="LAST_COMMIT_MESSAGE" value="count" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

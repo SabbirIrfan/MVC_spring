@@ -46,7 +46,10 @@
         <property name="annotatedClasses">
             <list>
                 <value>
-                   springmvc.model.Note
+                    springmvc.model.Product
+                </value>
+                <value>
+                    springmvc.model.User
                 </value>
             </list>
         </property>
@@ -58,7 +61,10 @@
         <property name="sessionFactory" ref="factory" />
     </bean>
 
-    <bean class="springmvc.Dao.NoteDao" name="noteDao">
+    <bean class="springmvc.Dao.ProductDao" name="productDao">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+    <bean class="springmvc.Dao.UserDao" name="userDao">
         <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
 

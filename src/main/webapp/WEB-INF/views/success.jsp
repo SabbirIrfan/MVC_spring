@@ -1,4 +1,4 @@
-<%@ page import="springmvc.model.Note" %><%--
+<%@ page import="springmvc.model.Product" %><%--
   Created by IntelliJ IDEA.
   User: john_doe
   Date: ২৫/১/২৪
@@ -15,10 +15,10 @@
 <body>
 
     <h1>
-<%--        ${note.getContent()}--%>
+<%--        ${product.getContent()}--%>
         <%
-            Note note =(Note) request.getAttribute("note");
-//            System.out.println(note.getContent());
+//            Product product =(Product) request.getAttribute("product");
+//            System.out.println(product.getContent());
         %>
     </h1>
 </body>
