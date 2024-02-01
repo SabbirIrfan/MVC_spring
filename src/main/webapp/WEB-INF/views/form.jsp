@@ -2,14 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add notes</title>
+    <title>OneToMany/title>
     <%@include file="allLink.jsp"%>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
     <body >
     <%@include file="navbar.jsp"%>
-        <div >
+        <div style="height: 100%; padding-bottom: 88px">
 
             <%
                 if(request.getAttribute("status") != null)
@@ -33,24 +33,23 @@
             <form action="savenoteoldway" method="post">
 
                 <label for="userId">User Id</label>
-                <input  name="id" id="userId" value="user ID">
+                <input  name="id" id="userId" placeholder="user ID">
 
                 <label for="userName">User name</label>
-                <input  name="name" id="userName" value="User name">
+                <input  name="name" id="userName" placeholder="User name">
 
                 <div class="form-group">
                     <label for="product">Example select</label>
                     <select class="form-control" name="product" id="product">
-                        <option>PRODUCT 1</option>
-                        <option>PRODUCT 2</option>
-                        <option>PRODUCT 3</option>
-                        <option>PRODUCT 4</option>
-                        <option>PRODUCT 5</option>
+                        <option>Dell xps</option>
+                        <option>Lenovo ThinkPad</option>
+                        <option>Acer Swift Edge</option>
+                        <option>Framework Laptop 13</option>
                     </select>
                 </div>
                 <div class="form-group formPad">
                     <label for="productDetail">Product Detail</label>
-                    <textarea  class="form-control noteContainer" id="productDetail" name="detail" required>Write something about you about this product.
+                    <textarea  class="form-control noteContainer" id="productDetail" name="detail" placeholder="Write something about you about this product." required>
                     </textarea>
                 </div>
 

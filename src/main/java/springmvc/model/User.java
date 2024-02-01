@@ -11,7 +11,7 @@ public class User {
     private Integer id;
 
     private String name;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany( cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Product> products;
     public User() {
     }

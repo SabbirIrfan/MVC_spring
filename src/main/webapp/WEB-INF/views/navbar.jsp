@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbarBG container"  >
-    <a class="navbar-brand" href="form">Product</a>
+    <a class="navbar-brand" href="form">Product Review</a>
 
 
     <div style="display: flex; justify-content: space-between" class="collapse navbar-collapse" id="navbarSupportedContent">
