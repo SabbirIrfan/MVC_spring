@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springmvc.Dao.UserDao;
 import springmvc.model.User;
+
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService{
     @Autowired
@@ -23,5 +26,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public void updateUserService(User user){
         userDao.updateUser(user);
+    }
+
+    @Override
+    public List<User> getUserByEmail(String email) {
+        return userDao.getUserByEmail(email);
     }
 }

@@ -1,71 +1,61 @@
+<%@ page import="java.util.List" %>
+<%@ page import="springmvc.model.Product" %>
 
+<%--
+  Created by IntelliJ IDEA.
+  User: john_doe
+  Date: ৫/২/২৪
+  Time: ১২:৫৩ PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>OneToMany/title>
-    <%@include file="allLink.jsp"%>
+    <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <%@include file="allLink.jsp"%>
+
+
+
 </head>
+<body>
+<%@include file="navbar.jsp"%>
 
-    <body >
-    <%@include file="navbar.jsp"%>
-        <div style="height: 100%; padding-bottom: 88px">
+<div class="container">
 
-            <%
-                if(request.getAttribute("status") != null)
-                    out.println(request.getAttribute("status"));
-                if(request.getAttribute("tittle") == null)
-                    request.setAttribute("tittle","Give a title to your product");
-
-                if(request.getAttribute("content") == null)
-                    request.setAttribute("content", "what you wanna save for latter");
-
-                if(request.getAttribute("id") == null){
-                    request.setAttribute("id","no");
-
-                }
-                System.out.println(request.getAttribute("id")+ " in add notes");
-
-            %>
+        <form action="savenoteoldway" method="post" class="form_container">
+                <div class="user_container">
 
 
-            <%--   ADD NOTES  --%>
-            <form action="savenoteoldway" method="post">
-
-                <label for="userId">User Id</label>
-                <input  name="id" id="userId" placeholder="user ID">
-
-                <label for="userName">User name</label>
-                <input  name="name" id="userName" placeholder="User name">
-
-                <div class="form-group">
+                    <label for="userEmail">User Email</label>
+                    <input  name="email" id="userEmail" placeholder="User Email">
+                </div>
+                <div class="product_container">
                     <label for="product">Example select</label>
-                    <select class="form-control" name="product" id="product">
-                        <option>Dell xps</option>
-                        <option>Lenovo ThinkPad</option>
-                        <option>Acer Swift Edge</option>
-                        <option>Framework Laptop 13</option>
+                    <select class="form_select" name="product" id="product">
+
+                        <%
+                            List<Product> list =(List<Product>) request.getAttribute("availableProductList");
+                            for (Product product : list) {
+                                System.out.println(product.getBrandName());
+                        %>
+                        <option><%= product.getId() %>  <%= product.getBrandName() %> - <%= product.getProcessor() %> - <%= product.getGeneration()%>  </option>
+                        <%
+                            }
+                        %>
+
                     </select>
-                </div>
-                <div class="form-group formPad">
-                    <label for="productDetail">Product Detail</label>
-                    <textarea  class="form-control noteContainer" id="productDetail" name="detail" placeholder="Write something about you about this product." required>
-                    </textarea>
-                </div>
+                    <div class="form-group formPad">
+                        <label for="productDetail">Product Detail</label>
+                        <textarea  class="textarea" id="productDetail" name="detail" placeholder="Write something about you about this product." required></textarea>
+                    </div>
+
 
                 <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
 
-
-        </div>
-    </body>
+        </form>
+    </div>
+</div>
+</body>
 </html>
-
-
-
-<%--<div class="form-group formPad">--%>
-<%--    <label for="tittle">Note Tittle</label>--%>
-<%--    <input type=text class="form-control" id="tittle" name="tittle" required aria-describedby="emailHelp" value="<% out.println(request.getAttribute("tittle"));%>">--%>
-<%--    <small id="emailHelp" class="form-text text-muted">We'll never share your Notes with anyone else But why should you believe anything I promise</small>--%>
-<%--</div>--%>
-

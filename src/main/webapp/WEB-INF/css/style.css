@@ -2,9 +2,38 @@
 
 
 }
-.form-body{
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 10px;
+}
+.form_container{
+    background-color: antiquewhite;
+    height: 1000px;
+    width: 800px;
 
 }
+.user_container{
+    font-family: sans-serif;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.product_container{
+    font-family: sans-serif;
+    padding-bottom: 10px;
+
+}
+
+.textarea{
+    width: 400px;
+}
+.select{
+    width : 380px
+}
+
 .search{
     display: flex;
     background: aqua;
@@ -14,22 +43,8 @@
     background: bisque;
     justify-content: left;
 }
-.navbar-div{
-    display: flex;
-    flex-direction: column;
-    padding-left: 30%;
 
 
-}
-.counterForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 200px;
-
-
-}
 .counterHeading{
     display: flex;
     flex-direction: column;
@@ -50,26 +65,9 @@
 }
 
 
-.container{
-    justify-items: stretch;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-}
 
-.noteContainer{
-    height: 20px;
-}
 
-.button{
-    padding: 10px;
-    margin: 10px;
-    justify-content: center;
-}
-/*.nav{*/
-/*    justify-items: center;*/
-/*}*/
+
 
 .flexCard{
     height: 100%;
@@ -77,9 +75,6 @@
     flex-direction: row;
 
 }
-.formPad{
-    padding: 10px;
-    margin: 10px;
-}
+
 
 

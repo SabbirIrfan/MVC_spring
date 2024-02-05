@@ -11,15 +11,9 @@
 <html>
 <head>
     <title>Title</title>
+    <%@include file="allLink.jsp"%>
 </head>
 <body>
 
-    <h1>
-<%--        ${product.getContent()}--%>
-        <%
-//            Product product =(Product) request.getAttribute("product");
-//            System.out.println(product.getContent());
-        %>
-    </h1>
 </body>
 </html>

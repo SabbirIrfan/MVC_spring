@@ -2,6 +2,8 @@ package springmvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import springmvc.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import springmvc.service.ProductService;
 import springmvc.service.UserService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -23,7 +26,19 @@ public class ProductController {
 
     @Autowired
     private UserService userService;
-    
+
+
+    @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
+    public ModelAndView addProduct(@ModelAttribute("product") Product product ){
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("productForm");
+        productService.saveProduct(product);
+        System.out.println(product);
+        return modelAndView;
+
+
+    }
 
     @RequestMapping(path = "/savenoteolderway" , method = RequestMethod.POST)
     public  ModelAndView saveNoteOldWay(HttpServletRequest request){
@@ -38,48 +53,49 @@ public class ProductController {
 
     }
 
-
+    @Transactional
     @RequestMapping(path = "/savenoteoldway" , method = RequestMethod.POST)
-    public  ModelAndView saveNoteOld(@RequestParam("id") Integer id,
-                                     @RequestParam("name") String name,
-                                     @RequestParam("product") String selectedProduct,
-                                     @RequestParam("detail") String detail){
+    public ModelAndView saveNoteOld(@RequestParam("email") String email,
+                                    @RequestParam("product") String selectedProduct,
+                                    @RequestParam("detail") String detail){
         ModelAndView modelAndView = new ModelAndView();
         System.out.println("got here");
-        modelAndView.addObject("status", "succesfully got the form data?");
-        if(userService.isNewUserService(id)){
-            User user = userService.getUserService(id);
-            Product product = new Product(selectedProduct,detail,user);
-            List<Product> list = user.getProducts();
-            list.add(product);
-            user.setProducts(list);
-            userService.updateUserService(user);
 
-//            productService.saveProduct(product);
+        int productId = Integer.parseInt(selectedProduct.split("\\s+")[0]);
+
+        Product boughtProduct = productService.getProductById(productId);
+        boughtProduct.setSold(true);
+
+
+        modelAndView.addObject("status", "succesfully got the form data?");
+        User user = null;
+        List<User> userList = userService.getUserByEmail(email);
+        if(userList.isEmpty()){
+            System.out.println("Wrong Email");
         }
         else{
-            List<Product> productList = new ArrayList<>();
+            user = userList.get(0);
+            boughtProduct.setUser(user);
+            List<Product> productsList = user.getProducts();
+            productsList.add(boughtProduct);
+            userService.saveUserService(user);
 
-            User user = new User((int) id,name, productList);
 
-            Product product = new Product(selectedProduct,detail,user);
-            productList.add(product);
-            user.setProducts(productList);
-
-           userService.saveUserService(user);
-//            productService.saveProduct(product);
-
+//            productService.saveProduct(boughtProduct);
 
         }
 
 
-        modelAndView.setViewName("form");
+
+        modelAndView.setViewName("addProduct");
 
 
         System.out.println("I am here");
         return modelAndView;
 
     }
+
+
 
 //    @RequestMapping(path = "/savenote" , method = RequestMethod.POST , consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
 //    public  ModelAndView saveNoteNewWay(@ModelAttribute Product product,@ModelAttribute User user, Model model){

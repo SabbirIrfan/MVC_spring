@@ -8,22 +8,38 @@ import java.util.List;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
+    private String email;
     private String name;
-    @OneToMany( cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy ="user" ,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Product> products;
     public User() {
     }
 
-    public User(int id, String name, List<Product> products) {
+    public User(Integer id, String email, String name) {
         this.id = id;
+        this.email = email;
         this.name = name;
-        this.products = products;
+    }
+
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public List<Product> getProducts() {
         return products;
@@ -34,10 +50,7 @@ public class User {
     }
 
 
-    public User(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+
 
 
     public int getId() {

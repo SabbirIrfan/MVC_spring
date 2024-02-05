@@ -1,0 +1,80 @@
+<!--<!DOCTYPE html>-->
+
+
+ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
+<head>
+  <title>OneToMany/title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <!-- <%@include file="allLink.jsp"%> -->
+
+  <link rel="stylesheet" type="text/css" href="styleForm.css">
+</head>
+
+<body >
+<!-- <%@include file="navbar.jsp"%> -->
+<div class="container">
+  <!--
+              <%
+                  if(request.getAttribute("status") != null)
+                      out.println(request.getAttribute("status"));
+                  if(request.getAttribute("tittle") == null)
+                      request.setAttribute("tittle","Give a title to your product");
+
+                  if(request.getAttribute("content") == null)
+                      request.setAttribute("content", "what you wanna save for latter");
+
+                  if(request.getAttribute("id") == null){
+                      request.setAttribute("id","no");
+
+                  }
+                  System.out.println(request.getAttribute("id")+ " in add notes");
+
+              %>
+
+   -->
+  <!-- <%--   ADD NOTES  --%> -->
+  <form action="savenoteoldway" method="post" class="form">
+    <div class="form_div">
+      <div class="user_container">
+        <label for="userId">User Id</label>
+        <input  name="id" id="userId" placeholder="user ID">
+
+        <label for="userName">User name</label>
+        <input  name="name" id="userName" placeholder="User name">
+      </div>
+      <div class="product_container">
+        <label for="product">Example select</label>
+        <select class="select" name="product" id="product">
+          <option>Dell xps</option>
+          <option>Lenovo ThinkPad</option>
+          <option>Acer Swift Edge</option>
+          <option>Framework Laptop 13</option>
+        </select>
+        <div class="form-group formPad">
+          <label for="productDetail">Product Detail</label>
+          <textarea  class="textarea" id="productDetail" name="detail" placeholder="Write something about you about this product." required>
+                    </textarea>
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+
+</div>
+</body>
+</html>
+
+
+<!--
+<%--<div class="form-group formPad">--%>
+<%--    <label for="tittle">Note Tittle</label>--%>
+<%--    <input type=text class="form-control" id="tittle" name="tittle" required aria-describedby="emailHelp" value="<% out.println(request.getAttribute("tittle"));%>">--%>
+<%--    <small id="emailHelp" class="form-text text-muted">We'll never share your Notes with anyone else But why should you believe anything I promise</small>--%>
+<%--</div>--%>
+ -->

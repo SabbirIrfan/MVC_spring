@@ -1,9 +1,13 @@
 package springmvc.Dao;
 
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import springmvc.model.User;
+
+import java.util.List;
 
 @Repository
 public class UserDao {
@@ -27,6 +31,11 @@ public class UserDao {
     }
     public User getUser(int id){
         return this.hibernateTemplate.get(User.class, id);
+    }
+    public List<User> getUserByEmail(String email){
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(User.class)
+                .add(Restrictions.eq("email", email));
+        return  (List<User>) hibernateTemplate.findByCriteria(detachedCriteria);
     }
     @Transactional
     public void updateUser(User user){
